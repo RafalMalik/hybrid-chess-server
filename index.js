@@ -3,17 +3,28 @@ var socket = require('socket.io'),
     server = http.createServer(),
     socket = socket.listen(server);
 
-socket.on('connection', function(connection) {
+var Chess = require('./chess').Chess;
+
+socket.on('connection', function (connection) {
     console.log('User Connected');
-    connection.on('message', function(msg){
+
+    var game = new Chess();
+
+    connection.on('message', function (msg) {
         socket.emit('message', msg);
     });
 
     connection.on('disconnect', function () {
-       console.log('No to narazie');
+        console.log('No to narazie');
+    });
+
+    connection.on('move', function (code) {
+        console.log('move' + code);
+        var result = game.move({ from: code[0], to: code[1] });
+        console.log(result);
     });
 });
 
-server.listen(3000, function(){
+server.listen(3000, function () {
     console.log('Server started');
 });
