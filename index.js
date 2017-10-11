@@ -3,7 +3,7 @@ var socket = require('socket.io'),
     server = http.createServer(),
     socket = socket.listen(server);
 
-var Chess = require('./chess').Chess;
+var Chess = require('chess.js').Chess;
 
 socket.on('connection', function (connection) {
     console.log('User Connected');
