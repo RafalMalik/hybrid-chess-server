@@ -18,10 +18,11 @@ socket.on('connection', function (connection) {
         console.log('No to narazie');
     });
 
-    connection.on('move', function (code) {
-        console.log('move' + code);
-        var result = game.move({ from: code[0], to: code[1] });
-        console.log(result);
+    connection.on('move', function (param) {
+		console.log(param.targetfield);
+        var result = game.move(param.targetfield);
+		console.log(result);
+        console.log(game.ascii());
     });
 });
 
