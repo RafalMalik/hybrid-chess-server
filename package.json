@@ -1,5 +1,5 @@
 {
-  "name": "Hybrid Chess Server",
+  "name": "bybrid-chess-server",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chess.js": "^0.10.2",
     "socket.io": "^2.0.3"
   }
 }
