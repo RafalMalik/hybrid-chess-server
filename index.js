@@ -117,7 +117,7 @@ nsp.on('connection', function(socket){
     socket.on('end-game', function(parameters) {
         console.log(socket.id + ' skonczyl gre');
         console.log(parameters);
-        parameters.answers;forEach(function(answer){
+        parameters.answers.forEach(function(answer){
             console.log(answer);
         });
     });
