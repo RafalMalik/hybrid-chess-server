@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0faab97e-5553-4ad1-b121-5aed30833a45" name="Default" comment="Merge">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GameList/GameList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lobby/Lobby.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Models/Game.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Models/Player.js" />
+    <list default="true" id="0faab97e-5553-4ad1-b121-5aed30833a45" name="Default" comment="Ver 0.0.1">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +30,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1412">
-              <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+            <state relative-caret-position="620">
+              <caret line="118" column="32" lean-forward="false" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -336,7 +331,7 @@
       <workItem from="1508774970162" duration="5000" />
       <workItem from="1508779315641" duration="1236000" />
       <workItem from="1508865724282" duration="4583000" />
-      <workItem from="1508945549724" duration="9579000" />
+      <workItem from="1508945549724" duration="10675000" />
     </task>
     <task id="LOCAL-00001" summary="Merge">
       <created>1508668615263</created>
@@ -359,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508668825246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ver 0.0.1">
+      <created>1508958127472</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508958127472</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39900000" />
+    <option name="totallyTimeSpent" value="40996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
@@ -414,7 +416,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Ver 0.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ver 0.0.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -543,8 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1412">
-          <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+        <state relative-caret-position="620">
+          <caret line="118" column="32" lean-forward="false" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
           <folding />
         </state>
       </provider>
