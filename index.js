@@ -16,7 +16,10 @@ socket.on('connection', function (connection) {
 
     lobby.add(connection.id);
 
-    socket.emit("lobby", lobby.getPlayers());
+    socket.emit("lobby", {
+        'id' : connection.id,
+        'players' : lobby.getPlayers()
+    });
 
     connection.on('message', function (msg) {
         socket.emit('message', msg);
