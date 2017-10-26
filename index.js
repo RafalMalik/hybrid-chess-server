@@ -30,6 +30,11 @@ socket.on('connection', function (connection) {
        socket.sockets.connected[players.on].emit('invite', players.my);
     });
 
+    connection.on('join', function (players) {
+        socket.sockets.connected[players.my].emit('init-game', 1);
+        socket.sockets.connected[players.on].emit('init-game', 1);
+    });
+
     connection.on('create-game', function () {
 
     });
