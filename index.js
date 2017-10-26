@@ -27,6 +27,7 @@ socket.on('connection', function (connection) {
     connection.on('invite', function (players) {
        console.log(players.my);
        console.log(players.on);
+       socket.sockets.connected[players.on].emit('invite', players.my);
     });
 
     connection.on('create-game', function () {
