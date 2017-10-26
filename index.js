@@ -18,10 +18,7 @@ socket.on('connection', function (connection) {
 
     socket.sockets.connected[connection.id].emit('welcome', connection.id);
 
-    socket.emit("lobby", {
-        'id' : connection.id,
-        'players' : lobby.getPlayers()
-    });
+    socket.emit("lobby",  lobby.getPlayers());
 
     connection.on('message', function (msg) {
         socket.emit('message', msg);
