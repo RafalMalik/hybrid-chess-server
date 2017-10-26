@@ -16,7 +16,7 @@ socket.on('connection', function (connection) {
 
     lobby.add(connection.id);
 
-    socket.broadcast.to(connection.id).emit('welcome', connection.id);
+    socket.sockets.connected[connection.id].emit('welcome', connection.id);
 
     socket.emit("lobby", {
         'id' : connection.id,
