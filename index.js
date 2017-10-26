@@ -31,12 +31,13 @@ socket.on('connection', function (connection) {
     });
 
     connection.on('join', function (players) {
+        var game = {
+            'player1': players.my,
+            'player2': players.on,
+            'room' : 1
+        };
         socket.sockets.connected[players.my].emit('init-game', 1);
         socket.sockets.connected[players.on].emit('init-game', 1);
-    });
-
-    connection.on('create-game', function () {
-
     });
 
 
