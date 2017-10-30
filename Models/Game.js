@@ -1,24 +1,22 @@
 class Game {
-    // ..and an (optional) custom class constructor. If one is
-    // not supplied, a default constructor is used instead:
-    // constructor() { }
-    constructor(id) {
+
+    constructor(id, player1, player2) {
         this.id = id;
+        this.options = {
+            'round': 5
+        };
+        this.ends = 0;
         this.status = 0;
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
-    // Simple class instance methods using short-hand method
-    // declaration
-    sayName() {
-        ChromeSamples.log('Hi, I am a ', this.name + '.');
+    getWinner() {
     }
 
-    sayHistory() {
-        ChromeSamples.log('"Polygon" is derived from the Greek polus (many) ' +
-            'and gonia (angle).');
-    }
+    isFinished() {
 
-    // We will look at static and subclassed methods shortly
+    }
 }
 
 module.exports = Game;

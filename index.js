@@ -9,58 +9,52 @@ var lobby = new Lobby();
 var GameList = require("./GameList/GameList");
 var gameList = new GameList();
 
-var questionId = 0;
-
 socket.on('connection', function (connection) {
-    console.log('User Connected');
 
-    lobby.add(connection.id);
-
-    socket.sockets.connected[connection.id].emit('welcome', connection.id);
-
-    socket.emit("lobby",  lobby.getPlayers());
-
-    connection.on('message', function (msg) {
-        socket.emit('message', msg);
-    });
+    lobby.welcomeNewPlayer(socket, connection);
 
     connection.on('invite', function (players) {
-       console.log(players.my);
-       console.log(players.on);
-       socket.sockets.connected[players.on].emit('invite', players.my);
+        console.log(players);
+       lobby.emitTo(socket, 'invite', players.player2, {
+            'player1': players.player1,
+            'player2': players.player2
+       });
     });
 
     connection.on('join', function (players) {
         var game = {
-            'player1': players.my,
-            'player2': players.on,
-            'room' : 1
+            'player1': players.player1,
+            'player2': players.player2,
+            'id' : 1
         };
-        socket.sockets.connected[players.my].emit('init-game', 1);
-        socket.sockets.connected[players.on].emit('init-game', 1);
+
+        gameList.addGame(players.player1, players.player2);
+
+        lobby.emitTo(socket, 'init-game', players.player1, game);
+        lobby.setPlayerStatus(players.player1, 1);
+
+        lobby.emitTo(socket, 'init-game', players.player2, game);
+        lobby.setPlayerStatus(players.player2, 1);
+
+        socket.emit("lobby", lobby.getPlayers());
+
     });
 
-
+    connection.on('discard', function(players) {
+       lobby.emitTo(socket, 'discard-invite', players.player1, {
+           player: players.player2
+       });
+    });
 
     connection.on('disconnect', function () {
-
-        lobby.remove(connection.id);
-
+        lobby.removePlayer(connection.id);
     });
-
 
 });
 
-
-var playersAll = 0;
 var nsp = socket.of('/game');
 nsp.on('connection', function(socket){
-    console.log('mamy gracza');
 
-    playersAll++;
-
-
-    if (playersAll >= 2) {
         nsp.emit('start-game', {
             'round' : 5,
             'time' : 2500,
@@ -108,35 +102,25 @@ nsp.on('connection', function(socket){
             ]
 
         });
-    }
-
-    socket.on('get-question', function (parameters) {
-
-        if (playersAll > 2) {
-            console.log('emituje ' + questionId++);
-            nsp.emit('question', {
-                'id': questionId
-            });
-        } else {
-            nsp.emit('waiting');
-        }
-
-    });
 
     socket.on('end-game', function(parameters) {
         console.log(socket.id + ' skonczyl gre');
-        console.log(parameters);
-        parameters.answers.forEach(function(answer){
-            console.log(answer);
-        });
+        // console.log(parameters);
+        // parameters.answers.forEach(function(answer){
+        //     console.log(answer);
+        // });
+        if (gameList.markReadyBySocket(socket.id)) {
+            //let game = gameList.getGameBySocket(socket.id);
+            nsp.emit('end-game', {
+
+            });
+        }
+        //let index = gameList.getGameIdBySocket(socket.id);
+        console.log(index);
     });
 
     socket.on('disconnect', function () {
-       playersAll--;
 
-       if (playersAll < 2) {
-           console.log('kurwa chopoczki, ogarnijcie sie!');
-       }
     });
 
 });
