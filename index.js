@@ -15,18 +15,20 @@ socket.on('connection', function (connection) {
 
     connection.on('invite', function (players) {
         console.log(players);
-       lobby.emitTo(socket, 'invite', players.player2, {
+        lobby.emitTo(socket, 'invite', players.player2, {
             'player1': players.player1,
             'player2': players.player2
-       });
+        });
     });
 
     connection.on('join', function (players) {
         var game = {
             'player1': players.player1,
             'player2': players.player2,
-            'id' : 1
+            'id': 1
         };
+
+        console.log(game);
 
         gameList.addGame(players.player1, players.player2);
 
@@ -40,10 +42,10 @@ socket.on('connection', function (connection) {
 
     });
 
-    connection.on('discard', function(players) {
-       lobby.emitTo(socket, 'discard-invite', players.player1, {
-           player: players.player2
-       });
+    connection.on('discard', function (players) {
+        lobby.emitTo(socket, 'discard-invite', players.player1, {
+            player: players.player2
+        });
     });
 
     connection.on('disconnect', function () {
@@ -53,70 +55,70 @@ socket.on('connection', function (connection) {
 });
 
 var nsp = socket.of('/game');
-nsp.on('connection', function(socket){
+nsp.on('connection', function (socket) {
 
-        nsp.emit('start-game', {
-            'round' : 5,
-            'time' : 2500,
-            'questions' : [
-                {
-                    'content' : 'Pytanie numer 1',
-                    'a' : 'Odpowiedz a',
-                    'b' : 'Odpowiedz b',
-                    'c' : 'Odpowiedz c',
-                    'd' : 'Odpowiedz d',
-                    't' : 'a'
-                },
-                {
-                    'content' : 'Pytanie numer 2',
-                    'a' : 'Odpowiedz a',
-                    'b' : 'Odpowiedz b',
-                    'c' : 'Odpowiedz c',
-                    'd' : 'Odpowiedz d',
-                    't' : 'b'
-                },
-                {
-                    'content' : 'Pytanie numer 3',
-                    'a' : 'Odpowiedz a',
-                    'b' : 'Odpowiedz b',
-                    'c' : 'Odpowiedz c',
-                    'd' : 'Odpowiedz d',
-                    't' : 'c'
-                },
-                {
-                    'content' : 'Pytanie numer 4',
-                    'a' : 'Odpowiedz a',
-                    'b' : 'Odpowiedz b',
-                    'c' : 'Odpowiedz c',
-                    'd' : 'Odpowiedz d',
-                    't' : 'd'
-                },
-                {
-                    'content' : 'Pytanie numer 5',
-                    'a' : 'Odpowiedz a',
-                    'b' : 'Odpowiedz b',
-                    'c' : 'Odpowiedz c',
-                    'd' : 'Odpowiedz d',
-                    't' : 'a'
-                }
-            ]
+    nsp.emit('start-game', {
+        'round': 5,
+        'time': 2500,
+        'questions': [
+            {
+                'content': 'Pytanie numer 1',
+                'a': 'Odpowiedz a',
+                'b': 'Odpowiedz b',
+                'c': 'Odpowiedz c',
+                'd': 'Odpowiedz d',
+                't': 'a'
+            },
+            {
+                'content': 'Pytanie numer 2',
+                'a': 'Odpowiedz a',
+                'b': 'Odpowiedz b',
+                'c': 'Odpowiedz c',
+                'd': 'Odpowiedz d',
+                't': 'b'
+            },
+            {
+                'content': 'Pytanie numer 3',
+                'a': 'Odpowiedz a',
+                'b': 'Odpowiedz b',
+                'c': 'Odpowiedz c',
+                'd': 'Odpowiedz d',
+                't': 'c'
+            },
+            {
+                'content': 'Pytanie numer 4',
+                'a': 'Odpowiedz a',
+                'b': 'Odpowiedz b',
+                'c': 'Odpowiedz c',
+                'd': 'Odpowiedz d',
+                't': 'd'
+            },
+            {
+                'content': 'Pytanie numer 5',
+                'a': 'Odpowiedz a',
+                'b': 'Odpowiedz b',
+                'c': 'Odpowiedz c',
+                'd': 'Odpowiedz d',
+                't': 'a'
+            }
+        ]
 
-        });
+    });
 
-    socket.on('end-game', function(parameters) {
-        console.log(socket.id + ' skonczyl gre');
-        // console.log(parameters);
-        // parameters.answers.forEach(function(answer){
-        //     console.log(answer);
-        // });
-        if (gameList.markReadyBySocket(socket.id)) {
+    socket.on('end-game', function (parameters) {
+        let index = gameList.getGameIdBySocket(socket.id);
+        gameList.savePoints(index, socket.id, parameters.points);
+
+        gameList.markReadyById(index);
+        if (gameList.getStatus(index) == 1) {
             //let game = gameList.getGameBySocket(socket.id);
-            nsp.emit('end-game', {
+            let results = gameList.getResults(index);
+            nsp.emit('end-game',
+                results
+            );
 
-            });
+
         }
-        //let index = gameList.getGameIdBySocket(socket.id);
-        console.log(index);
     });
 
     socket.on('disconnect', function () {
@@ -124,7 +126,6 @@ nsp.on('connection', function(socket){
     });
 
 });
-
 
 
 server.listen(3000, function () {

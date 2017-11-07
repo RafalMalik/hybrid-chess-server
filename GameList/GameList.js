@@ -15,32 +15,40 @@ class GameList {
         this.gameList = this.gameList.filter(function(game){
             return game.id !== id;
         });
-        console.log("Goodbye, " + id);
     }
     getGameList() {
         return this.gameList;
     }
     getGameIdBySocket(socket) {
         let socketWithNmp = socket.substr(6);
-        console.log(socketWithNmp);
         for (let [index, game] of this.gameList.entries()) {
-
-            console.log(game);
-            if (game.player1 == socketWithNmp || game.player2 == socketWithNmp) {
+            if (game.player1.socket == socketWithNmp || game.player2.socket == socketWithNmp) {
                 return index;
             }
         }
     }
 
-    markReadyBySocket(socket) {
-        let index = this.getGameIdBySocket(socket);
-        this.gameList.get(index).ends++;
+    markReadyById(id) {
+        this.gameList[id].incEnds();
+        // this.gameList.get(index).ends++;
 
-        if (this.gameList.get(index).ends == 2) {
+        if (this.gameList[id].ends == 2) {
             return true;
         }
 
         return false;
+    }
+
+    savePoints(index, socket, points) {
+        this.gameList[index].savePoints(socket, points);
+    }
+
+    getResults(index) {
+        return this.gameList[index].getResults();
+    }
+
+    getStatus(index) {
+        return this.gameList[index].status;
     }
 }
 
