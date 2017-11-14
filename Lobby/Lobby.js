@@ -15,6 +15,28 @@ class Lobby {
         return this.nextPlayerId - 1;
     }
 
+    addPlayer(id, socket) {
+        console.log('DODAJE ID : ' + id);
+        this.players.push(new Player(id, socket));
+
+
+        return id;
+    }
+
+    updatePlayerSocket(id, socket, connection) {
+        let player = this.players.filter(function(player){
+            return player.id !== id;
+        });
+
+        player.socket = connection.id;
+
+        socket.sockets.connected[connection.id].emit('update-socket', {
+            'socket' : connection.id
+        });
+
+        socket.emit("lobby", this.getPlayers());
+    }
+
     removePlayer(socketId) {
         this.players = this.players.filter(function(player){
             return player.socket !== socketId;
@@ -38,6 +60,17 @@ class Lobby {
         console.log('User Connected');
 
         let playerId = this.addPlayer(connection.id);
+        socket.sockets.connected[connection.id].emit('welcome', {
+            'id' : playerId,
+            'socket' : connection.id
+        });
+        socket.emit("lobby", this.getPlayers());
+    }
+
+    oldPlayer(id, socket, connection) {
+        console.log('User Connected');
+
+        let playerId = this.addPlayer(id, connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : playerId,
             'socket' : connection.id

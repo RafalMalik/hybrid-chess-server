@@ -11,11 +11,16 @@ var gameList = new GameList();
 
 socket.on('connection', function (connection) {
 
-    let request = connection.request;
 
-    console.log(request._query['playerId']);
+    let id = connection.request._query['playerId'];
 
-    lobby.welcomeNewPlayer(socket, connection);
+    if (id == -1) {
+        lobby.welcomeNewPlayer(socket, connection);
+    } else {
+        lobby.oldPlayer(id, socket, connection);
+    }
+
+
 
     connection.on('invite', function (players) {
         lobby.emitTo(socket, 'invite', players.player2.socket, {
@@ -44,8 +49,8 @@ socket.on('connection', function (connection) {
     });
 
     connection.on('disconnect', function () {
-        console.log('Wychodze z gry');
-        lobby.removePlayer(connection.id);
+        console.log('Wychodze z gry' + connection.id);
+        //lobby.removePlayer(connection.id);
     });
 
 });
@@ -114,12 +119,16 @@ nsp.on('connection', function (socket) {
                 'game': game
             });
 
+            console.log('Wychodze z gry' + game.player1.socket);
+            console.log('Wychodze z gry' + game.player2.socket);
+            lobby.removePlayer(game.player1.socket);
+            lobby.removePlayer(game.player2.socket);
 
         }
     });
 
     socket.on('disconnect', function (connection) {
-        lobby.removePlayer(connection.id);
+
     });
 
 });
