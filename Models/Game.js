@@ -8,11 +8,13 @@ class Game {
         this.ends = 0;
         this.status = 0;
         this.player1 = {
-            'socket': player1,
+            'id': player1.id,
+            'socket': player1.socket,
             'points': 0
         };
         this.player2 = {
-            'socket': player2,
+            'id': player2.id,
+            'socket': player2.socket,
             'points': 0
         };
     }
@@ -33,13 +35,13 @@ class Game {
         if (this.player1.points > this.player2.points) {
             return {
                 'status': 'player1 win',
-                'win' : this.player1.socket,
+                'win': this.player1.socket,
                 'lose': this.player2.socket
             };
         } else if (this.player1.points < this.player2.points) {
             return {
                 'status': 'player2 win',
-                'win' : this.player2.socket,
+                'win': this.player2.socket,
                 'lose': this.player1.socket
             };
         } else {
@@ -50,15 +52,17 @@ class Game {
 
     }
 
-    savePoints(socket, points) {
-        if (this.player1.socket == socket) {
+    savePoints(id, points) {
+        if (this.player1.id == id) {
             this.player1.points = points;
         } else {
             this.player2.points = points;
         }
+        this.incEnds();
     }
 
     isFinished() {
+        return this.status == 1 ? true : false;
 
     }
 }

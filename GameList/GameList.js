@@ -9,7 +9,8 @@ class GameList {
 
     addGame(player1, player2) {
         this.gameList.push(new Game(this.nextGameId, player1, player2));
-        return this.gameList.length - 1;
+        this.nextGameId++;
+        return this.nextGameId - 1;
     }
     removeGame(id) {
         this.gameList = this.gameList.filter(function(game){
@@ -39,8 +40,9 @@ class GameList {
         return false;
     }
 
-    savePoints(index, socket, points) {
-        this.gameList[index].savePoints(socket, points);
+    savePoints(id, playerId, points) {
+        let game = this.getById(id);
+        game.savePoints(playerId, points);
     }
 
     getResults(index) {
@@ -49,6 +51,14 @@ class GameList {
 
     getStatus(index) {
         return this.gameList[index].status;
+    }
+
+    getById(id) {
+        let game =  this.gameList.filter(function(game){
+            return game.id === id;
+        });
+
+        return game[0];
     }
 }
 

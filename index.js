@@ -11,31 +11,26 @@ var gameList = new GameList();
 
 socket.on('connection', function (connection) {
 
+    let request = connection.request;
+
+    console.log(request._query['playerId']);
+
     lobby.welcomeNewPlayer(socket, connection);
 
     connection.on('invite', function (players) {
-        console.log(players);
-        lobby.emitTo(socket, 'invite', players.player2, {
+        lobby.emitTo(socket, 'invite', players.player2.socket, {
             'player1': players.player1,
             'player2': players.player2
         });
     });
 
     connection.on('join', function (players) {
-        var game = {
-            'player1': players.player1,
-            'player2': players.player2,
-            'id': 1
-        };
+        gameId = gameList.addGame(players.player1, players.player2);
 
-        console.log(game);
-
-        gameList.addGame(players.player1, players.player2);
-
-        lobby.emitTo(socket, 'init-game', players.player1, game);
+        lobby.emitTo(socket, 'init-game', players.player1.socket, gameList.getById(gameId));
         lobby.setPlayerStatus(players.player1, 1);
 
-        lobby.emitTo(socket, 'init-game', players.player2, game);
+        lobby.emitTo(socket, 'init-game', players.player2.socket, gameList.getById(gameId));
         lobby.setPlayerStatus(players.player2, 1);
 
         socket.emit("lobby", lobby.getPlayers());
@@ -49,6 +44,7 @@ socket.on('connection', function (connection) {
     });
 
     connection.on('disconnect', function () {
+        console.log('Wychodze z gry');
         lobby.removePlayer(connection.id);
     });
 
@@ -106,23 +102,24 @@ nsp.on('connection', function (socket) {
     });
 
     socket.on('end-game', function (parameters) {
-        let index = gameList.getGameIdBySocket(socket.id);
-        gameList.savePoints(index, socket.id, parameters.points);
+        let game = gameList.getById(parameters.id);
+        game.savePoints(parameters.playerId, parameters.points);
 
-        gameList.markReadyById(index);
-        if (gameList.getStatus(index) == 1) {
+        // gameList.markReadyById(index);
+        if (game.isFinished()) {
             //let game = gameList.getGameBySocket(socket.id);
-            let results = gameList.getResults(index);
-            nsp.emit('end-game',
-                results
-            );
+            let results = game.getResults();
+            nsp.emit('end-game', {
+                'results': results,
+                'game': game
+            });
 
 
         }
     });
 
-    socket.on('disconnect', function () {
-
+    socket.on('disconnect', function (connection) {
+        lobby.removePlayer(connection.id);
     });
 
 });
