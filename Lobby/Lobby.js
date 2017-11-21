@@ -7,16 +7,17 @@ class Lobby {
         this.players = [];
     }
 
-    addPlayer(id) {
-        console.log('DODAJE ID : ' + id);
-        this.players.push(new Player(this.nextPlayerId, id));
+    addNewPlayer(socket) {
+        console.log('DODAJE ID : ' + socket);
+        console.log("ID: " + this.nextPlayerId);
+        this.players.push(new Player(this.nextPlayerId, socket));
         this.nextPlayerId++;
 
         return this.nextPlayerId - 1;
     }
 
-    addPlayer(id, socket) {
-        console.log('DODAJE ID : ' + id);
+    addOldPlayer(id, socket) {
+        console.log('DODAJE socket : ' + id);
         this.players.push(new Player(id, socket));
 
 
@@ -59,7 +60,7 @@ class Lobby {
     welcomeNewPlayer(socket, connection) {
         console.log('User Connected');
 
-        let playerId = this.addPlayer(connection.id);
+        let playerId = this.addNewPlayer(connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : playerId,
             'socket' : connection.id
@@ -70,7 +71,9 @@ class Lobby {
     oldPlayer(id, socket, connection) {
         console.log('User Connected');
 
-        let playerId = this.addPlayer(id, connection.id);
+        console.log(connection);
+
+        let playerId = this.addOldPlayer(id, connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : playerId,
             'socket' : connection.id

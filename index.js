@@ -14,15 +14,16 @@ socket.on('connection', function (connection) {
 
     let id = connection.request._query['playerId'];
 
+    console.log(id);
+
     if (id == -1) {
         lobby.welcomeNewPlayer(socket, connection);
     } else {
         lobby.oldPlayer(id, socket, connection);
     }
 
-
-
     connection.on('invite', function (players) {
+        console.log(players);
         lobby.emitTo(socket, 'invite', players.player2.socket, {
             'player1': players.player1,
             'player2': players.player2
@@ -123,6 +124,7 @@ nsp.on('connection', function (socket) {
             console.log('Wychodze z gry' + game.player2.socket);
             lobby.removePlayer(game.player1.socket);
             lobby.removePlayer(game.player2.socket);
+            gameList.removeGame(parameters.id);
 
         }
     });
