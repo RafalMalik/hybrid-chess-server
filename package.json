@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "chess.js": "^0.10.2",
+    "mongodb": "^2.2.33",
     "socket.io": "^2.0.3"
   }
 }

@@ -1,12 +1,11 @@
 class Game {
 
-    constructor(id, player1, player2) {
+    constructor(id, player1, player2, settings, questions) {
         this.id = id;
-        this.options = {
-            'round': 5
-        };
         this.ends = 0;
         this.status = 0;
+        this.settings = settings;
+        this.questions = questions;
         this.player1 = {
             'id': player1.id,
             'socket': player1.socket,
@@ -35,14 +34,14 @@ class Game {
         if (this.player1.points > this.player2.points) {
             return {
                 'status': 'player1 win',
-                'win': this.player1.socket,
-                'lose': this.player2.socket
+                'win': this.player1,
+                'lose': this.player2
             };
         } else if (this.player1.points < this.player2.points) {
             return {
                 'status': 'player2 win',
-                'win': this.player2.socket,
-                'lose': this.player1.socket
+                'win': this.player2,
+                'lose': this.player1
             };
         } else {
             return {

@@ -7,19 +7,22 @@ class GameList {
         this.gameList = [];
     }
 
-    addGame(player1, player2) {
-        this.gameList.push(new Game(this.nextGameId, player1, player2));
+    addGame(player1, player2, settings, questions) {
+        this.gameList.push(new Game(this.nextGameId, player1, player2, settings, questions));
         this.nextGameId++;
         return this.nextGameId - 1;
     }
+
     removeGame(id) {
-        this.gameList = this.gameList.filter(function(game){
+        this.gameList = this.gameList.filter(function (game) {
             return game.id !== id;
         });
     }
+
     getGameList() {
         return this.gameList;
     }
+
     getGameIdBySocket(socket) {
         let socketWithNmp = socket.substr(6);
         for (let [index, game] of this.gameList.entries()) {
@@ -54,7 +57,7 @@ class GameList {
     }
 
     getById(id) {
-        let game =  this.gameList.filter(function(game){
+        let game = this.gameList.filter(function (game) {
             return game.id === id;
         });
 

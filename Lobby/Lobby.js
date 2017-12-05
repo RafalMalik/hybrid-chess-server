@@ -9,7 +9,6 @@ class Lobby {
 
     addNewPlayer(socket) {
         console.log('DODAJE ID : ' + socket);
-        console.log("ID: " + this.nextPlayerId);
         this.players.push(new Player(this.nextPlayerId, socket));
         this.nextPlayerId++;
 
@@ -17,9 +16,7 @@ class Lobby {
     }
 
     addOldPlayer(id, socket) {
-        console.log('DODAJE socket : ' + id);
         this.players.push(new Player(id, socket));
-
 
         return id;
     }
@@ -51,13 +48,13 @@ class Lobby {
     setPlayerStatus(id, status) {
         for (let player of this.players) {
 
-            if (player.socket == id) {
+            if (player.id == id) {
                 player.status = status;
             }
         }
     }
 
-    welcomeNewPlayer(socket, connection) {
+    newPlayer(socket, connection) {
         console.log('User Connected');
 
         let playerId = this.addNewPlayer(connection.id);
@@ -71,8 +68,6 @@ class Lobby {
     oldPlayer(id, socket, connection) {
         console.log('User Connected');
 
-        console.log(connection);
-
         let playerId = this.addOldPlayer(id, connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : playerId,
@@ -83,6 +78,15 @@ class Lobby {
 
     emitTo(socket, event, to, parameters) {
         socket.sockets.connected[to].emit(event, parameters);
+    }
+
+    setPlayerSocket(id, socket) {
+        for (let player of this.players) {
+
+            if (player.id == id) {
+                player.socket = sock;
+            }
+        }
     }
 
 
