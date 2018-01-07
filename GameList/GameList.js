@@ -43,9 +43,9 @@ class GameList {
         return false;
     }
 
-    savePoints(id, playerId, points) {
-        let game = this.getById(id);
-        game.savePoints(playerId, points);
+    savePoints(parameters) {
+        let game = this.getById(parameters.id);
+        game.savePoints(parameters);
     }
 
     getResults(index) {

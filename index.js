@@ -30,8 +30,6 @@ MongoClient.connect(url, function (err, db) {
         }
 
         connection.on('invite', function (players) {
-            console.log('tutaj');
-            console.log(players);
             lobby.emitTo(socket, 'invite', players.player2.socket, {
                 'player1': players.player1,
                 'player2': players.player2
@@ -43,11 +41,10 @@ MongoClient.connect(url, function (err, db) {
             var questions = Array();
             var settings = {
                 'round': 5,
-                'time': 10
+                'time': 60
             };
 
-
-            var tmp = db.collection('questions').aggregate([{$sample: {size: 5}}]).toArray(function (err, coll) {
+            var tmp = db.collection('questions').aggregate([{$sample: {size: settings.round}}]).toArray(function (err, coll) {
 
                 let gameId = gameList.addGame(players.player1, players.player2, settings, coll);
 
@@ -57,12 +54,10 @@ MongoClient.connect(url, function (err, db) {
                 // lobby.emitTo(socket, 'init-game', players.player2.socket, gameList.getById(gameId));
                 lobby.setPlayerStatus(players.player2.id, 1);
 
-                socket.sockets.connected[players.player1.socket].join('kozak');
-                socket.sockets.connected[players.player2.socket].join('kozak');
+                socket.sockets.connected[players.player1.socket].join(gameId);
+                socket.sockets.connected[players.player2.socket].join(gameId);
 
-                console.log(gameId);
-
-                socket.to('kozak').emit('init-game', gameList.getById(gameId));
+                socket.to(gameId).emit('init-game', gameList.getById(gameId));
 
 
                 socket.emit("lobby", lobby.getPlayers());
@@ -87,31 +82,31 @@ MongoClient.connect(url, function (err, db) {
 
         connection.on('end-game', function (parameters) {
             let game = gameList.getById(parameters.id);
-            game.savePoints(parameters.playerId, parameters.points);
+            game.savePoints(parameters);
 
-            // gameList.markReadyById(index);
             if (game.isFinished()) {
-                //let game = gameList.getGameBySocket(socket.id);
                 let results = game.getResults();
                 console.log(results);
-                socket.to('kozak').emit('end-game', {
+                socket.to(parameters.id).emit('end-game', {
                     'results': results,
                     'game': game
                 });
 
-
                 lobby.setPlayerStatus(game.player1.id, 0);
                 lobby.setPlayerStatus(game.player2.id, 0);
 
-                socket.sockets.connected[game.player1.socket].leave('kozak');
-                socket.sockets.connected[game.player2.socket].leave('kozak');
+                socket.sockets.connected[game.player1.socket].leave(parameters.id);
+                socket.sockets.connected[game.player2.socket].leave(parameters.id);
 
                 socket.sockets.connected[game.player1.socket].disconnect();
                 socket.sockets.connected[game.player2.socket].disconnect();
 
-                gameList.removeGame(parameters.id);
+                db.collection("games").insertOne(game, function (err, res) {
+                    if (err) throw err;
+                    console.log("Gra zapisana");
+                });
 
-                //socket.emit("lobby", lobby.getPlayers());
+                gameList.removeGame(parameters.id);
 
             }
         });
@@ -122,21 +117,25 @@ MongoClient.connect(url, function (err, db) {
 
             if (game.isFinished()) {
                 let results = game.getResults();
-                console.log(results);
-                socket.to('kozak').emit('end-game', {
+                socket.to(parameters.id).emit('end-game', {
                     'results': results,
                     'game': game
                 });
 
-
                 lobby.setPlayerStatus(game.player1.id, 0);
                 lobby.setPlayerStatus(game.player2.id, 0);
 
-                socket.sockets.connected[game.player1.socket].leave('kozak');
-                socket.sockets.connected[game.player2.socket].leave('kozak');
+
+                socket.sockets.connected[game.player1.socket].leave(parameters.id);
+                socket.sockets.connected[game.player2.socket].leave(parameters.id);
 
                 socket.sockets.connected[game.player1.socket].disconnect();
                 socket.sockets.connected[game.player2.socket].disconnect();
+
+                db.collection("games").insertOne(game, function (err, res) {
+                    if (err) throw err;
+                    console.log("Gra zapisana");
+                });
 
                 gameList.removeGame(parameters.id);
 
@@ -149,7 +148,7 @@ MongoClient.connect(url, function (err, db) {
 
     });
 
-    server.listen(3000, function () {
+    server.listen(3001, function () {
         console.log('Server started');
     });
 

@@ -9,12 +9,16 @@ class Game {
         this.player1 = {
             'id': player1.id,
             'socket': player1.socket,
-            'points': 0
+            'points': 0,
+            'answers': [],
+            'avatar': player1.avatar
         };
         this.player2 = {
             'id': player2.id,
             'socket': player2.socket,
-            'points': 0
+            'points': 0,
+            'answers': [],
+            'avatar': player2.avatar
         };
     }
 
@@ -51,11 +55,17 @@ class Game {
 
     }
 
-    savePoints(id, points) {
-        if (this.player1.id == id) {
-            this.player1.points = points;
+    savePoints(parameters) {
+        if (this.player1.id == parameters.playerId) {
+            this.player1.points = parameters.points;
+            this.player1.answers = parameters.answers;
+            this.player1.time = parameters.time;
+            this.player1.avatar = parameters.avatar;
         } else {
-            this.player2.points = points;
+            this.player2.points = parameters.points;
+            this.player2.answers = parameters.answers;
+            this.player2.time = parameters.time;
+            this.player2.avatar = parameters.avatar;
         }
         this.incEnds();
     }
