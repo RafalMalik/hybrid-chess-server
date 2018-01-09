@@ -113,7 +113,8 @@ MongoClient.connect(url, function (err, db) {
 
         connection.on('end-time', function (parameters) {
             let game = gameList.getById(parameters.id);
-            game.savePoints(parameters.playerId, parameters.points);
+            game.savePoints(parameters);
+
 
             if (game.isFinished()) {
                 let results = game.getResults();
