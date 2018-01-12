@@ -34,7 +34,6 @@ class GameList {
 
     markReadyById(id) {
         this.gameList[id].incEnds();
-        // this.gameList.get(index).ends++;
 
         if (this.gameList[id].ends == 2) {
             return true;

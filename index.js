@@ -21,8 +21,6 @@ MongoClient.connect(url, function (err, db) {
 
         let id = connection.request._query['playerId'];
 
-        console.log(id);
-
         if (id == -1) {
             lobby.newPlayer(socket, connection);
         } else {
@@ -48,17 +46,13 @@ MongoClient.connect(url, function (err, db) {
 
                 let gameId = gameList.addGame(players.player1, players.player2, settings, coll);
 
-                // lobby.emitTo(socket, 'init-game', players.player1.socket, gameList.getById(gameId));
                 lobby.setPlayerStatus(players.player1.id, 1);
-
-                // lobby.emitTo(socket, 'init-game', players.player2.socket, gameList.getById(gameId));
                 lobby.setPlayerStatus(players.player2.id, 1);
 
                 socket.sockets.connected[players.player1.socket].join(gameId);
                 socket.sockets.connected[players.player2.socket].join(gameId);
 
                 socket.to(gameId).emit('init-game', gameList.getById(gameId));
-
 
                 socket.emit("lobby", lobby.getPlayers());
             });
@@ -74,8 +68,6 @@ MongoClient.connect(url, function (err, db) {
 
         connection.on('disconnect', function () {
             lobby.removePlayer(connection.id);
-            console.log('Wychodze z gry' + connection.id);
-
             socket.emit("lobby", lobby.getPlayers());
         });
 
@@ -115,7 +107,6 @@ MongoClient.connect(url, function (err, db) {
             let game = gameList.getById(parameters.id);
             game.savePoints(parameters);
 
-
             if (game.isFinished()) {
                 let results = game.getResults();
                 socket.to(parameters.id).emit('end-game', {
@@ -154,5 +145,4 @@ MongoClient.connect(url, function (err, db) {
     });
 
     console.log("Polaczono z baza!");
-    //db.close();
 });

@@ -40,7 +40,6 @@ class Lobby {
         this.players = this.players.filter(function(player){
             return player.socket !== socketId;
         });
-        console.log("Goodbye, " + socketId);
     }
     getPlayers() {
         return this.players;
@@ -56,8 +55,6 @@ class Lobby {
     }
 
     newPlayer(socket, connection) {
-        console.log('User Connected');
-
         let player = this.addNewPlayer(connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : player.id,
@@ -68,8 +65,6 @@ class Lobby {
     }
 
     oldPlayer(id, socket, connection) {
-        console.log('User Connected');
-
         let player = this.addOldPlayer(id, connection.id);
         socket.sockets.connected[connection.id].emit('welcome', {
             'id' : player.id,
