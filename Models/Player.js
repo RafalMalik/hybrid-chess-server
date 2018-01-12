@@ -13,7 +13,7 @@ class Player {
 
 
         var tmp = Math.floor(Math.random() * (maxAvatarId - minAvatarId + 1)) + minAvatarId;
-        this.avatar = 'http://193.70.113.241/resources/avatars/' + tmp + '.jpg';
+        this.avatar = 'http://193.70.113.241/resources/avatars/' + tmp + '.png';
     }
 
 
