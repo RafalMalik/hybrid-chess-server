@@ -8,7 +8,7 @@ class Player {
         this.status = 0;
         this.points = 0;
 
-        var maxAvatarId = 10;
+        var maxAvatarId = 9;
         var minAvatarId = 1;
 
 
