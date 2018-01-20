@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0faab97e-5553-4ad1-b121-5aed30833a45" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,15 +14,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+              <folding>
+                <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+                <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,8 +32,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="504">
+              <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,49 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>join</find>
+      <find>skoncz</find>
+      <find>addGame</find>
+      <find>getRes</find>
+      <find>console.log</find>
+      <find>console.lo</find>
+      <find>invi</find>
+      <find>lobby</find>
+      <find>addPlayer</find>
+      <find>addPla</find>
+      <find>-1</find>
+      <find>dodaje</find>
+      <find>doda</find>
+      <find>dodaje so</find>
+      <find>oldPlayer</find>
+      <find>addOldPlayer</find>
+      <find>savePoi</find>
+      <find>remove</find>
+      <find>init-game</find>
+      <find>dodaje socket</find>
+      <find>Good</find>
+      <find>[</find>
+      <find>disconn</find>
+      <find>result</find>
+      <find>kozak</find>
+      <find>user conn</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="RafalMalik &lt;rafalmalik.info@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -73,7 +114,16 @@
         <option value="$PROJECT_DIR$/app/Server/WebSocketServer.js" />
         <option value="$PROJECT_DIR$/app/Server/GameServer.js" />
         <option value="$PROJECT_DIR$/app/start.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/user.js" />
+        <option value="$PROJECT_DIR$/Player/Player.js" />
+        <option value="$PROJECT_DIR$/Player/Players.js" />
+        <option value="$PROJECT_DIR$/GameList/GameList.js" />
+        <option value="$PROJECT_DIR$/res/time" />
+        <option value="$PROJECT_DIR$/Lobby/Lobby.js" />
+        <option value="$PROJECT_DIR$/Models/Game.js" />
+        <option value="$PROJECT_DIR$/Models/Player.js" />
         <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
@@ -95,11 +145,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1985" />
+    <option name="y" value="-4" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -119,16 +169,13 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hybrid-chess-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hybrid-chess-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="hybrid-quiz-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-quiz-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -137,7 +184,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hybrid-chess-ionic-client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -145,7 +192,12 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Models" />
+      <recent name="$PROJECT_DIR$/Player" />
       <recent name="C:\xampp\htdocs\javascripts\hybrid-chess-server\Classes" />
     </key>
   </component>
@@ -162,6 +214,14 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -197,15 +257,6 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -253,32 +304,255 @@
       <workItem from="1507569873188" duration="929000" />
       <workItem from="1507646888684" duration="8000" />
       <workItem from="1507665767955" duration="2258000" />
+      <workItem from="1508667641943" duration="801000" />
+      <workItem from="1508668746368" duration="214000" />
+      <workItem from="1508668969738" duration="1473000" />
+      <workItem from="1508774970162" duration="5000" />
+      <workItem from="1508779315641" duration="1236000" />
+      <workItem from="1508865724282" duration="4583000" />
+      <workItem from="1508945549724" duration="11315000" />
+      <workItem from="1509027550641" duration="6293000" />
+      <workItem from="1509112519219" duration="4202000" />
+      <workItem from="1509272053912" duration="6205000" />
+      <workItem from="1509383452016" duration="7331000" />
+      <workItem from="1509393604012" duration="25000" />
+      <workItem from="1510070340829" duration="9333000" />
+      <workItem from="1510601014045" duration="877000" />
+      <workItem from="1510678694277" duration="11897000" />
+      <workItem from="1511286630117" duration="9000" />
+      <workItem from="1511291939441" duration="2743000" />
+      <workItem from="1511454709461" duration="8000" />
+      <workItem from="1511815377716" duration="964000" />
+      <workItem from="1511890274640" duration="4803000" />
+      <workItem from="1511904450018" duration="984000" />
+      <workItem from="1511981552149" duration="4870000" />
+      <workItem from="1512069503182" duration="4692000" />
+      <workItem from="1512140414052" duration="599000" />
+      <workItem from="1512292700126" duration="50000" />
+      <workItem from="1512411532105" duration="5605000" />
+      <workItem from="1512489279804" duration="12984000" />
+      <workItem from="1512999717780" duration="8611000" />
+      <workItem from="1514486418833" duration="817000" />
+      <workItem from="1515317389199" duration="1923000" />
+      <workItem from="1515350737397" duration="308000" />
+      <workItem from="1515353447585" duration="751000" />
+      <workItem from="1515516695882" duration="2004000" />
+      <workItem from="1515608493730" duration="610000" />
+      <workItem from="1515683028043" duration="648000" />
+      <workItem from="1515771116795" duration="353000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge">
+      <created>1508668615263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508668615263</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge">
+      <created>1508668676194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1508668676194</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge">
+      <created>1508668825246</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1508668825246</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ver 0.0.1">
+      <created>1508958127472</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508958127472</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ver 0.0.1">
+      <created>1508959214126</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1508959214126</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ver 0.0.1">
+      <created>1508959396139</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1508959396139</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ver 0.0.1">
+      <created>1508959649967</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1508959649967</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ver 0.0.1">
+      <created>1508959745151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1508959745151</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ver 0.0.1">
+      <created>1509037865603</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1509037865603</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ver 0.0.1">
+      <created>1509038324482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1509038324483</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ver 0.0.1">
+      <created>1509038611067</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1509038611067</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ver 0.0.1">
+      <created>1509038894875</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1509038894875</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Ver 0.0.1">
+      <created>1509040670948</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1509040670948</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Ver 0.0.1">
+      <created>1509041488189</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1509041488189</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Ver 0.0.1">
+      <created>1509042086922</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1509042086922</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Ver 0.0.1">
+      <created>1509393615932</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1509393615932</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ver 0.0.1">
+      <created>1510076802306</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1510076802306</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Ver 0.0.1">
+      <created>1510689255612</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1510689255612</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ver 0.0.1">
+      <created>1510694333691</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1510694333691</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ver 0.0.1">
+      <created>1511293868513</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1511293868513</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ver 0.0.1">
+      <created>1512496282197</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1512496282197</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ver 0.0.1">
+      <created>1513005057468</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1513005057468</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Naprawiono problem z avatarem.">
+      <created>1515319742230</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1515319742230</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Naprawiono problem z avatarem.">
+      <created>1515351011554</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1515351011554</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Poprawiono zapis gier zakonczonych przez koniec czasu.">
+      <created>1515517499327</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1515517499327</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22009000" />
+    <option name="totallyTimeSpent" value="142829000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <frame x="1984" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18544474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18544474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -301,22 +575,34 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge" />
+    <MESSAGE value="Ver 0.0.1" />
+    <MESSAGE value="Naprawiono problem z avatarem." />
+    <MESSAGE value="Poprawiono zapis gier zakonczonych przez koniec czasu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Poprawiono zapis gier zakonczonych przez koniec czasu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Classes/PlayerList.js" />
+    <entry file="file://$PROJECT_DIR$/app/views/home.handlebars" />
     <entry file="file://$PROJECT_DIR$/app/start.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+            <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -331,22 +617,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/HttpServer.js" />
-    <entry file="file://$PROJECT_DIR$/app/Server/GameServer.js" />
-    <entry file="file://$PROJECT_DIR$/app/Server/WebSocketServer.js" />
-    <entry file="file://$PROJECT_DIR$/app/Classes/Player.js" />
-    <entry file="file://$PROJECT_DIR$/app/Classes/PlayerList.js" />
-    <entry file="file://$PROJECT_DIR$/app/views/home.handlebars" />
-    <entry file="file://$PROJECT_DIR$/app/start.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+            <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -355,7 +629,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+            <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -370,7 +647,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+            <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -395,18 +675,66 @@
     <entry file="file://$PROJECT_DIR$/app/Server/GameServer.js" />
     <entry file="file://$PROJECT_DIR$/app/start.js" />
     <entry file="file://$PROJECT_DIR$/app/Server/HttpServer.js" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding>
+            <marker date="1516455746549" expanded="true" signature="0:262" ph="{&quot;name&quot;: &quot;hybrid-quiz-server&quot;...}" />
+            <marker date="1516455746549" expanded="true" signature="228:260" ph="{&quot;chess.js&quot;: &quot;^0.10.2&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/time">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lobby/Lobby.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameList/GameList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        <state relative-caret-position="504">
+          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding />
         </state>
       </provider>
